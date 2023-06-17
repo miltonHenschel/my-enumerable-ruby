@@ -9,4 +9,8 @@ module MyEnumerable
     each { |item| arr << item if block.call(item) }
     arr
   end
+  def any?(&block)
+    each { |item| return true if block.call(item) }
+    false
+  end
 end
